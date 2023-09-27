@@ -1,6 +1,6 @@
 # atomi-internal-ingress
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2023.7.3](https://img.shields.io/badge/AppVersion-2023.7.3-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2023.7.3](https://img.shields.io/badge/AppVersion-2023.7.3-informational?style=flat-square)
 
 Internal Ingress for AtomiCloud using Cloudflared
 
