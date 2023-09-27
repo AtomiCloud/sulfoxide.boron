@@ -1,0 +1,11 @@
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+metadata:
+  name: playground
+servers: 1
+network: playground
+image: rancher/k3s:v1.23.16-k3s1
+ports:
+  - port: 8091:80
+    nodeFilters:
+      - loadbalancer

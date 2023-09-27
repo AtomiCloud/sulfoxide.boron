@@ -1,0 +1,30 @@
+version: "3"
+
+tasks:
+  debug:
+    desc: Debug the helm chart
+    dir: chart
+    cmds:
+      - helm dependency update
+      - helm template $RELEASE_NAME . --debug --values values.yaml --values values.{{.LANDSCAPE}}.{{.CLUSTER}}.yaml {{.CLI_ARGS}}
+
+  render:
+    desc: Render the helm chart
+    dir: chart
+    cmds:
+      - helm dependency update
+      - >-
+        helm template $RELEASE_NAME . --values values.yaml --values values.{{.LANDSCAPE}}.{{.CLUSTER}}.yaml 
+        {{.CLI_ARGS}} > rendered/{{.LANDSCAPE}}/{{.CLUSTER}}/manifest.yaml
+
+  install:
+    desc: Installs the chart
+    dir: chart
+    cmds:
+      - helm dependency update
+      - helm upgrade --install $RELEASE_NAME . --values values.yaml --values values.{{.LANDSCAPE}}.{{.CLUSTER}}.yaml {{.CLI_ARGS}}
+
+  remove:
+    desc: Removes an installed release
+    cmds:
+      - helm uninstall $RELEASE_NAME

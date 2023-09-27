@@ -1,0 +1,6 @@
+[general]
+contrib=CT1
+ignore=B6
+
+[contrib-title-conventional-commits]
+types = action,chore,config,docs,feat,fix,release,upstream

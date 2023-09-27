@@ -1,0 +1,32 @@
+serviceTree:
+  landscape: pichu
+  cluster: opal
+  platform: systems
+  service: internal-ingress
+  module: tunnel
+  layer: "1"
+
+replicaCount: 1
+
+autoscaling:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 150m
+    memory: 128Mi
+
+auth:
+  secretName: cloudflare-tunnel-token
+  internal:
+    enable: false
+  external:
+    enable: true
+    refreshInterval: 1h
+    remoteSecretName: /pichu/auto/cloudflared/opal-cloudflared-ingress-token
+    secretStore:
+      name: aws-ssm-secret-store
+      kind: ClusterSecretStore

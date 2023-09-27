@@ -1,0 +1,132 @@
+serviceTree:
+  # -- L of LPSM of AtomiCloud Service Tree
+  landscape: pichu
+
+  # -- Cluster for AtomiCloud's Service Tree
+  cluster: opal
+
+  # -- P of LPSM for AtomiCloud's Service Tree
+  platform: systems
+
+  # -- S of LPSM for AtomiCloud's Service Tree
+  service: internal-ingress
+
+  # -- M of LPSM for AtomiCloud's Service Tree
+  module: tunnel
+
+  # -- Layer for AtomiCloud's Service Tree
+  layer: "1"
+
+# -- Cloudflare Tunnel Token Mechanism
+auth:
+  # -- Secret Name that stores the Token with key TUNNEL_TOKEN
+  secretName: cloudflare-tunnel-token
+
+  # -- Secret directly inlined in value files
+  internal:
+    # -- Use hard coded secret
+    enable: false
+
+    # -- Hard coded Cloudflare token
+    token: ""
+
+  # -- Use external secret
+  external:
+
+    # -- Enable the use of external secret
+    enable: true
+
+    # -- Refresh Rate
+    refreshInterval: 1m
+
+    # -- Remote Secret Reference name
+    remoteSecretName: cluster/cloudflared/token
+
+    # Secret Store to reference
+    secretStore:
+      # -- Name of the Secret Store
+      name: awsssm-store
+
+      # -- Kind of the Secret Store: ClusterSecretStore or SecretStore
+      kind: ClusterSecretStore
+
+    # -- Secret policy
+    policy:
+      # -- Creation policy
+      creation: Owner
+
+      # -- Deletion policy
+      deletion: Retain
+
+# -- Number of Replicas, only if HPA is not enabled
+replicaCount: 1
+
+# -- Auto-scaling
+autoscaling:
+  # -- Enable or disable auto-scaling
+  enabled: true
+
+  # minimum number of replicas during auto-scaling
+  minReplicas: 1
+
+  # maximum number of replicas during auto-scaling
+  maxReplicas: 3
+
+  # -- Target CPU Utilization
+  targetCPUUtilizationPercentage: 80
+  # -- Target Memory Utilization
+  targetMemoryUtilizationPercentage: 80
+
+# -- Image configurations
+image:
+  repository: "cloudflare/cloudflared"
+  pullPolicy: IfNotPresent
+
+
+config:
+  # -- target kubernetes cluster IP family. 4 or 6
+  clusterIpVersion: 4
+
+  # -- Ports which cloudflared listen to metrics on
+  metricPort: 2000
+
+
+# -- Image pull secrets
+imagePullSecrets: [ ]
+
+# -- Override name ( will change only the chart name)
+nameOverride: ""
+
+# -- Additional Annotations to add to pods
+podAnnotations: {  }
+
+# -- Security Context for Pods
+podSecurityContext: { }
+
+# -- Generate security Context
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+      drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 10000
+# -- resource limits
+resources:
+  limits:
+    cpu: 50m
+    memory: 256Mi
+  requests:
+    cpu: 15m
+    memory: 128Mi
+
+# -- node selectors
+nodeSelector: { }
+
+# -- toleration
+tolerations: [ ]
+
+# -- afinity
+affinity: { }

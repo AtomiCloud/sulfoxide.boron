@@ -1,0 +1,9 @@
+apiVersion: v2
+name: atomi-internal-ingress
+description: Internal Ingress for AtomiCloud using Cloudflared
+
+type: application
+
+version: 1.0.0
+
+appVersion: "2023.7.3"

@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "atomi-internal-ingress.fullname" . }}
+  labels:
+    {{- include "atomi-internal-ingress.labels" . | nindent 4 }}
+  annotations:
+    {{- include "atomi-internal-ingress.annotations" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "atomi-internal-ingress.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+      {{- include "atomi-internal-ingress.annotations" . | nindent 8 }}
+      {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "atomi-internal-ingress.labels" . | nindent 8 }}
+        {{- include "atomi-internal-ingress.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          command:
+            - "cloudflared"
+            - "tunnel"
+            - "--edge-ip-version"
+            - "{{ .Values.config.clusterIpVersion }}"
+            - "--metrics"
+            - "0.0.0.0:{{ .Values.config.metricPort }}"
+            - "run"
+          envFrom:
+            - secretRef:
+                name: "{{ .Values.auth.secretName }}"
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          livenessProbe:
+            httpGet:
+              path: /ready
+              port: {{ .Values.config.metricPort }}
+            failureThreshold: 1
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
