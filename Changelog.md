@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.1...v1.0.2) (2023-09-28)
+
+
+### 🐛 Bug Fixes
+
+* example yaml values ([ab579f2](https://github.com/AtomiCloud/sulfoxide.boron/commit/ab579f2c9defccc9f33551399a49f53684b37250))
+
 ## [1.0.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.0...v1.0.1) (2023-09-27)
 
 
