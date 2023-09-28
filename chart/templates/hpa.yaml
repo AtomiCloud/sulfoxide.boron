@@ -2,16 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "atomi-internal-ingress.fullname" . }}
-  labels:
-    {{- include "atomi-internal-ingress.labels" . | nindent 4 }}
-  annotations:
-    {{- include "atomi-internal-ingress.annotations" . | nindent 4 }}
+  name: {{ include "sulfoxide-boron.fullname" . }}
+  labels: {{- include "sulfoxide-boron.labels" . | nindent 4 }}
+  annotations: {{- include "sulfoxide-boron.annotations" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "atomi-internal-ingress.fullname" . }}
+    name: {{ include "sulfoxide-boron.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

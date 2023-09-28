@@ -1,24 +1,30 @@
-# atomi-internal-ingress
+# sulfoxide-boron
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2023.7.3](https://img.shields.io/badge/AppVersion-2023.7.3-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2023.8.2](https://img.shields.io/badge/AppVersion-2023.8.2-informational?style=flat-square)
 
-Internal Ingress for AtomiCloud using Cloudflared
+Helm chart to deploy internal ingress controller with VPN access to internal services using cloudflared
+
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.1.0 |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` | afinity |
-| auth | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1m","remoteSecretName":"cluster/cloudflared/token","secretStore":{"kind":"ClusterSecretStore","name":"awsssm-store"}},"internal":{"enable":false,"token":""},"secretName":"cloudflare-tunnel-token"}` | Cloudflare Tunnel Token Mechanism |
-| auth.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1m","remoteSecretName":"cluster/cloudflared/token","secretStore":{"kind":"ClusterSecretStore","name":"awsssm-store"}}` | Use external secret |
+| affinity | object | `{}` | affinity |
+| auth | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}},"internal":{"enable":false,"token":""},"secretName":"cloudflare-tunnel-token"}` | Cloudflare Tunnel Token |
+| auth.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}}` | Use external secret |
 | auth.external.enable | bool | `true` | Enable the use of external secret |
 | auth.external.policy | object | `{"creation":"Owner","deletion":"Retain"}` | Secret policy |
 | auth.external.policy.creation | string | `"Owner"` | Creation policy |
 | auth.external.policy.deletion | string | `"Retain"` | Deletion policy |
-| auth.external.refreshInterval | string | `"1m"` | Refresh Rate |
-| auth.external.remoteSecretName | string | `"cluster/cloudflared/token"` | Remote Secret Reference name |
-| auth.external.secretStore.kind | string | `"ClusterSecretStore"` | Kind of the Secret Store: ClusterSecretStore or SecretStore |
-| auth.external.secretStore.name | string | `"awsssm-store"` | Name of the Secret Store |
+| auth.external.refreshInterval | string | `"1h"` | Refresh Rate |
+| auth.external.remoteSecretName | string | `"OPAL_RUBY_INGRESS_TOKEN"` | Remote Secret Reference name |
+| auth.external.secretStore.kind | string | `"SecretStore"` | Kind of the Secret Store: `ClusterSecretStore` or `SecretStore` |
+| auth.external.secretStore.name | string | `"doppler"` | Name of the Secret Store |
 | auth.internal | object | `{"enable":false,"token":""}` | Secret directly inlined in value files |
 | auth.internal.enable | bool | `false` | Use hard coded secret |
 | auth.internal.token | string | `""` | Hard coded Cloudflare token |
@@ -38,12 +44,11 @@ Internal Ingress for AtomiCloud using Cloudflared
 | replicaCount | int | `1` | Number of Replicas, only if HPA is not enabled |
 | resources | object | `{"limits":{"cpu":"50m","memory":"256Mi"},"requests":{"cpu":"15m","memory":"128Mi"}}` | resource limits |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true,"runAsNonRoot":true,"runAsUser":10000}` | Generate security Context |
-| serviceTree.cluster | string | `"opal"` | Cluster for AtomiCloud's Service Tree |
-| serviceTree.landscape | string | `"pichu"` | L of LPSM of AtomiCloud Service Tree |
-| serviceTree.layer | string | `"1"` | Layer for AtomiCloud's Service Tree |
-| serviceTree.module | string | `"tunnel"` | M of LPSM for AtomiCloud's Service Tree |
-| serviceTree.platform | string | `"systems"` | P of LPSM for AtomiCloud's Service Tree |
-| serviceTree.service | string | `"internal-ingress"` | S of LPSM for AtomiCloud's Service Tree |
+| serviceTree | object | `{"layer":"1","module":"tunnel","platform":"sulfoxide","service":"boron"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
+| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_BORON"},"storeName":"doppler"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_BORON"}` | Secret of Secrets reference |
+| sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_BORON"` | DOPPLER Token Reference |
+| sulfoxide-bromine.storeName | string | `"doppler"` | Store name to create |
 | tolerations | list | `[]` | toleration |
 
 ----------------------------------------------

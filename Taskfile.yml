@@ -1,7 +1,7 @@
 version: "3"
 
 env:
-  RELEASE_NAME: internal-ingress
+  RELEASE_NAME: sulfoxide-boron
 
 includes:
   pichu:opal:
@@ -33,3 +33,11 @@ tasks:
     dir: chart
     cmds:
       - helm dependency update
+
+  latest:
+    desc: Get the latest version of Cloudflared
+    cmds:
+      - >-
+        echo "cloudflared: $(skopeo list-tags docker://docker.io/cloudflare/cloudflared | jq -r '.Tags[]' | sort -V | tail -n 6 | head -n 1)"
+      - >-
+        echo "sulfoxide-bromine: $(skopeo list-tags docker://ghcr.io/atomicloud/sulfoxide.bromine/sulfoxide-bromine | jq -r '.Tags[]' | sort -V | tail -n 1)"

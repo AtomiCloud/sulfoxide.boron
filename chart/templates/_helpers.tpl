@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "atomi-internal-ingress.name" -}}
+{{- define "sulfoxide-boron.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "atomi-internal-ingress.fullname" -}}
+{{- define "sulfoxide-boron.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,19 +26,19 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "atomi-internal-ingress.chart" -}}
+{{- define "sulfoxide-boron.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "atomi-internal-ingress.labels" -}}
-helm.sh/chart: {{ include "atomi-internal-ingress.chart" . }}
+{{- define "sulfoxide-boron.labels" -}}
+helm.sh/chart: {{ include "sulfoxide-boron.chart" . }}
 {{- range $k, $v := .Values.serviceTree }}
 "atomi.cloud/{{ $k }}": "{{ $v }}"
 {{- end }}
-{{ include "atomi-internal-ingress.selectorLabels" . }}
+{{ include "sulfoxide-boron.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -48,8 +48,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Common annotations
 */}}
-{{- define "atomi-internal-ingress.annotations" -}}
-helm.sh/chart: {{ include "atomi-internal-ingress.chart" . }}
+{{- define "sulfoxide-boron.annotations" -}}
+helm.sh/chart: {{ include "sulfoxide-boron.chart" . }}
 {{- range $k, $v := .Values.serviceTree }}
 "atomi.cloud/{{ $k }}": "{{ $v }}"
 {{- end }}
@@ -58,17 +58,17 @@ helm.sh/chart: {{ include "atomi-internal-ingress.chart" . }}
 {{/*
 Selector labels
 */}}
-{{- define "atomi-internal-ingress.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "atomi-internal-ingress.name" . }}
+{{- define "sulfoxide-boron.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "sulfoxide-boron.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "atomi-internal-ingress.serviceAccountName" -}}
+{{- define "sulfoxide-boron.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "atomi-internal-ingress.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "sulfoxide-boron.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

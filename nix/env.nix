@@ -12,6 +12,7 @@ with packages;
   dev = [
     pls
     git
+    skopeo
   ];
 
   infra = [

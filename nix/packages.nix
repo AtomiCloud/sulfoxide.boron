@@ -32,6 +32,7 @@ let
 
           # lint
           treefmt
+          skopeo
 
           # infra
           k3d

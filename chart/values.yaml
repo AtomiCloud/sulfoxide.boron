@@ -1,24 +1,23 @@
+# -- AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb)
 serviceTree:
-  # -- L of LPSM of AtomiCloud Service Tree
-  landscape: pichu
-
-  # -- Cluster for AtomiCloud's Service Tree
-  cluster: opal
-
-  # -- P of LPSM for AtomiCloud's Service Tree
-  platform: systems
-
-  # -- S of LPSM for AtomiCloud's Service Tree
-  service: internal-ingress
-
-  # -- M of LPSM for AtomiCloud's Service Tree
+  platform: sulfoxide
+  service: boron
   module: tunnel
-
-  # -- Layer for AtomiCloud's Service Tree
   layer: "1"
 
-# -- Cloudflare Tunnel Token Mechanism
+# -- Create SecretStore via secret of secrets pattern
+sulfoxide-bromine:
+  # -- Store name to create
+  storeName: doppler
+  # -- Secret of Secrets reference
+  rootSecret:
+    # -- DOPPLER Token Reference
+    ref: "SULFOXIDE_BORON"
+
+
+# -- Cloudflare Tunnel Token
 auth:
+
   # -- Secret Name that stores the Token with key TUNNEL_TOKEN
   secretName: cloudflare-tunnel-token
 
@@ -37,18 +36,18 @@ auth:
     enable: true
 
     # -- Refresh Rate
-    refreshInterval: 1m
+    refreshInterval: 1h
 
     # -- Remote Secret Reference name
-    remoteSecretName: cluster/cloudflared/token
+    remoteSecretName: OPAL_RUBY_INGRESS_TOKEN
 
     # Secret Store to reference
     secretStore:
       # -- Name of the Secret Store
-      name: awsssm-store
+      name: doppler
 
-      # -- Kind of the Secret Store: ClusterSecretStore or SecretStore
-      kind: ClusterSecretStore
+      # -- Kind of the Secret Store: `ClusterSecretStore` or `SecretStore`
+      kind: SecretStore
 
     # -- Secret policy
     policy:
@@ -128,5 +127,5 @@ nodeSelector: { }
 # -- toleration
 tolerations: [ ]
 
-# -- afinity
+# -- affinity
 affinity: { }

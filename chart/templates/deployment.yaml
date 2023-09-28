@@ -1,28 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "atomi-internal-ingress.fullname" . }}
-  labels:
-    {{- include "atomi-internal-ingress.labels" . | nindent 4 }}
-  annotations:
-    {{- include "atomi-internal-ingress.annotations" . | nindent 4 }}
+  name: {{ include "sulfoxide-boron.fullname" . }}
+  labels: {{- include "sulfoxide-boron.labels" . | nindent 4 }}
+  annotations: {{- include "sulfoxide-boron.annotations" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
-    matchLabels:
-      {{- include "atomi-internal-ingress.selectorLabels" . | nindent 6 }}
+    matchLabels: {{- include "sulfoxide-boron.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      annotations:
-      {{- include "atomi-internal-ingress.annotations" . | nindent 8 }}
+      annotations: {{- include "sulfoxide-boron.annotations" . | nindent 8 }}
       {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      labels:
-        {{- include "atomi-internal-ingress.labels" . | nindent 8 }}
-        {{- include "atomi-internal-ingress.selectorLabels" . | nindent 8 }}
+      labels: {{- include "sulfoxide-boron.labels" . | nindent 8 }}
+        {{- include "sulfoxide-boron.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
