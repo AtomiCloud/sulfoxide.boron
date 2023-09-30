@@ -8,14 +8,14 @@ tasks:
       - helm dependency update
       - helm template $RELEASE_NAME . --debug --values values.yaml --values values.{{.LANDSCAPE}}.{{.CLUSTER}}.yaml {{.CLI_ARGS}}
 
-  render:
+  template:
     desc: Render the helm chart
     dir: chart
     cmds:
       - helm dependency update
       - >-
         helm template $RELEASE_NAME . --values values.yaml --values values.{{.LANDSCAPE}}.{{.CLUSTER}}.yaml 
-        {{.CLI_ARGS}} > rendered/{{.LANDSCAPE}}/{{.CLUSTER}}/manifest.yaml
+        {{.CLI_ARGS}}
 
   install:
     desc: Installs the chart
