@@ -4,11 +4,6 @@ env:
   RELEASE_NAME: sulfoxide-boron
 
 includes:
-  pichu:opal:
-    taskfile: tasks/Taskfile.cluster.yaml
-    vars:
-      LANDSCAPE: pichu
-      CLUSTER: opal
   suicune:opal-ruby:
     taskfile: tasks/Taskfile.cluster.yaml
     vars:
