@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.3...v1.1.0) (2023-09-30)
+
+
+### 🚀 New Features
+
+* suicune opal-ruby values.yaml ([20f7507](https://github.com/AtomiCloud/sulfoxide.boron/commit/20f7507d002959a87dff16e379d52407ac5e27c9))
+
 ## [1.0.3](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.2...v1.0.3) (2023-09-30)
 
 
