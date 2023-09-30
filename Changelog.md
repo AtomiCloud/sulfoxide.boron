@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.2...v1.0.3) (2023-09-30)
+
+
+### 🐛 Bug Fixes
+
+* change cluster render to cluster template ([84db329](https://github.com/AtomiCloud/sulfoxide.boron/commit/84db3290302b000cd991c41a4f2791237d576cd1))
+
 ## [1.0.2](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.1...v1.0.2) (2023-09-28)
 
 
