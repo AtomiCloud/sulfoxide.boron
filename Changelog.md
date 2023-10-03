@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.1.0...v1.2.0) (2023-10-03)
+
+
+### 🚀 New Features
+
+* **entei:** initial values.yaml ([feec88f](https://github.com/AtomiCloud/sulfoxide.boron/commit/feec88fd2e2db6266ec30c770fbb3cda79ada072))
+
 ## [1.1.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.0.3...v1.1.0) (2023-09-30)
 
 
