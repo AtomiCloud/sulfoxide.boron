@@ -1,6 +1,6 @@
 serviceTree:
   landscape: entei
-  cluster: opal-ruby
+  cluster: opal
 
 auth:
   internal:
