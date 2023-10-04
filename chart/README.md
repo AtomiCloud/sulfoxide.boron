@@ -15,8 +15,8 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | affinity |
-| auth | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}},"internal":{"enable":false,"token":""},"secretName":"cloudflare-tunnel-token"}` | Cloudflare Tunnel Token |
-| auth.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler"}}` | Use external secret |
+| auth | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler-boron"}},"internal":{"enable":false,"token":""},"secretName":"cloudflare-tunnel-token"}` | Cloudflare Tunnel Token |
+| auth.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"doppler-boron"}}` | Use external secret |
 | auth.external.enable | bool | `true` | Enable the use of external secret |
 | auth.external.policy | object | `{"creation":"Owner","deletion":"Retain"}` | Secret policy |
 | auth.external.policy.creation | string | `"Owner"` | Creation policy |
@@ -24,7 +24,7 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 | auth.external.refreshInterval | string | `"1h"` | Refresh Rate |
 | auth.external.remoteSecretName | string | `"OPAL_RUBY_INGRESS_TOKEN"` | Remote Secret Reference name |
 | auth.external.secretStore.kind | string | `"SecretStore"` | Kind of the Secret Store: `ClusterSecretStore` or `SecretStore` |
-| auth.external.secretStore.name | string | `"doppler"` | Name of the Secret Store |
+| auth.external.secretStore.name | string | `"doppler-boron"` | Name of the Secret Store |
 | auth.internal | object | `{"enable":false,"token":""}` | Secret directly inlined in value files |
 | auth.internal.enable | bool | `false` | Use hard coded secret |
 | auth.internal.token | string | `""` | Hard coded Cloudflare token |
@@ -45,10 +45,10 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 | resources | object | `{"limits":{"cpu":"50m","memory":"256Mi"},"requests":{"cpu":"15m","memory":"128Mi"}}` | resource limits |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true,"runAsNonRoot":true,"runAsUser":10000}` | Generate security Context |
 | serviceTree | object | `{"layer":"1","module":"tunnel","platform":"sulfoxide","service":"boron"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_BORON"},"storeName":"doppler"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine | object | `{"rootSecret":{"ref":"SULFOXIDE_BORON"},"storeName":"doppler-boron"}` | Create SecretStore via secret of secrets pattern |
 | sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_BORON"}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_BORON"` | DOPPLER Token Reference |
-| sulfoxide-bromine.storeName | string | `"doppler"` | Store name to create |
+| sulfoxide-bromine.storeName | string | `"doppler-boron"` | Store name to create |
 | tolerations | list | `[]` | toleration |
 
 ----------------------------------------------
