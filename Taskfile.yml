@@ -4,6 +4,11 @@ env:
   RELEASE_NAME: sulfoxide-boron
 
 includes:
+  entei:opal:
+    taskfile: tasks/Taskfile.cluster.yaml
+    vars:
+      LANDSCAPE: entei
+      CLUSTER: opal
   suicune:opal-ruby:
     taskfile: tasks/Taskfile.cluster.yaml
     vars:
