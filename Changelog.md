@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.3.0...v1.3.1) (2023-10-04)
+
+
+### 🐛 Bug Fixes
+
+* entei:opal Taskfile ([fc7288a](https://github.com/AtomiCloud/sulfoxide.boron/commit/fc7288ad4789c592abd183e7a0c6eb2cfba2749b))
+
 ## [1.3.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.2.0...v1.3.0) (2023-10-04)
 
 
