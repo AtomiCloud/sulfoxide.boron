@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.2.0...v1.3.0) (2023-10-04)
+
+
+### 🚀 New Features
+
+* **entei-opal:** migrate entei to entei opal ([6ea1cd7](https://github.com/AtomiCloud/sulfoxide.boron/commit/6ea1cd73c3dbb5aaa2f54080fe1a1b6c08315576))
+
 ## [1.2.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.1.0...v1.2.0) (2023-10-03)
 
 
