@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.3.1...v1.4.0) (2023-10-04)
+
+
+### 🚀 New Features
+
+* namespace secret-store ([35eac7f](https://github.com/AtomiCloud/sulfoxide.boron/commit/35eac7fb8dca4430b9058cf889155d8563696248))
+
 ## [1.3.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.3.0...v1.3.1) (2023-10-04)
 
 
