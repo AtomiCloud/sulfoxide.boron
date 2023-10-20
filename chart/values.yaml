@@ -7,6 +7,11 @@ serviceTree:
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
+  annotations:
+    # -- Helm hook to run
+    helm.sh/hook: pre-install,pre-upgrade
+    # -- Helm weight to run
+    helm.sh/weight: "-5"
   # -- Store name to create
   storeName: doppler-boron
   # -- Secret of Secrets reference
