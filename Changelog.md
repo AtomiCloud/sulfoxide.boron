@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.6.0...v1.7.0) (2023-10-20)
+
+
+### 📦 Upstreams Changes
+
+* **bromine:** 1.2.3 ([fc495f9](https://github.com/AtomiCloud/sulfoxide.boron/commit/fc495f9f730b30a340ec5e667264c075e2d0f6b9))
+
 ## [1.6.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.5.0...v1.6.0) (2023-10-20)
 
 
