@@ -2,6 +2,22 @@ serviceTree:
   landscape: suicune
   cluster: opal-ruby
 
+# -- Create SecretStore via secret of secrets pattern
+sulfoxide-bromine:
+  annotations:
+    # -- Helm hook to run
+    helm.sh/hook: pre-install,pre-upgrade
+    # -- Helm weight to run
+    helm.sh/weight: "-5"
+
+
+# -- Secret Annotations (External Secrets) to control synchronization
+secretAnnotation:
+  # -- Helm hook to run
+  helm.sh/hook: pre-install,pre-upgrade
+  # -- Helm weight to run
+  helm.sh/weight: "-4"
+
 auth:
   internal:
     enable: false

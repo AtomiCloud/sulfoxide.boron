@@ -43,11 +43,10 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 | podSecurityContext | object | `{}` | Security Context for Pods |
 | replicaCount | int | `1` | Number of Replicas, only if HPA is not enabled |
 | resources | object | `{"limits":{"cpu":"50m","memory":"256Mi"},"requests":{"cpu":"15m","memory":"128Mi"}}` | resource limits |
+| secretAnnotation | object | `{"argocd.argoproj.io/sync-wave":"-2"}` | Secret Annotations (External Secrets) to control synchronization |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true,"runAsNonRoot":true,"runAsUser":10000}` | Generate security Context |
 | serviceTree | object | `{"layer":"1","module":"tunnel","platform":"sulfoxide","service":"boron"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"annotations":{"helm.sh/hook":"pre-install,pre-upgrade","helm.sh/weight":"-5"},"rootSecret":{"ref":"SULFOXIDE_BORON"},"storeName":"doppler-boron"}` | Create SecretStore via secret of secrets pattern |
-| sulfoxide-bromine.annotations."helm.sh/hook" | string | `"pre-install,pre-upgrade"` | Helm hook to run |
-| sulfoxide-bromine.annotations."helm.sh/weight" | string | `"-5"` | Helm weight to run |
+| sulfoxide-bromine | object | `{"annotations":{"argocd.argoproj.io/sync-wave":"-3"},"rootSecret":{"ref":"SULFOXIDE_BORON"},"storeName":"doppler-boron"}` | Create SecretStore via secret of secrets pattern |
 | sulfoxide-bromine.rootSecret | object | `{"ref":"SULFOXIDE_BORON"}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | string | `"SULFOXIDE_BORON"` | DOPPLER Token Reference |
 | sulfoxide-bromine.storeName | string | `"doppler-boron"` | Store name to create |
