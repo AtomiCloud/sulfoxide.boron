@@ -1,6 +1,6 @@
 # sulfoxide-boron
 
-![Version: 1.8.0](https://img.shields.io/badge/Version-1.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2023.10.0](https://img.shields.io/badge/AppVersion-2023.10.0-informational?style=flat-square)
+![Version: 1.8.1](https://img.shields.io/badge/Version-1.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2023.10.0](https://img.shields.io/badge/AppVersion-2023.10.0-informational?style=flat-square)
 
 Helm chart to deploy internal ingress controller with VPN access to internal services using cloudflared
 

@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.8.0...v1.8.1) (2023-11-18)
+
+
+### 🐛 Bug Fixes
+
+* sync wave for secretstore externalsecret ([4cedc8c](https://github.com/AtomiCloud/sulfoxide.boron/commit/4cedc8c074081ab75ac15dde6cae84cb5875839e))
+
 ## [1.8.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.7.0...v1.8.0) (2023-11-18)
 
 
