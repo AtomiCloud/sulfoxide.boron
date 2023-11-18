@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.7.0...v1.8.0) (2023-11-18)
+
+
+### 🚀 New Features
+
+* ruby values ([685eaa5](https://github.com/AtomiCloud/sulfoxide.boron/commit/685eaa5ef1ddfb14d4ee6e3637653cbb1340eeac))
+
 ## [1.7.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.6.0...v1.7.0) (2023-10-20)
 
 
