@@ -1,3 +1,15 @@
+## [1.9.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.8.1...v1.9.0) (2024-02-08)
+
+
+### 🚀 New Features
+
+* onyx cluster ([13e9823](https://github.com/AtomiCloud/sulfoxide.boron/commit/13e9823182d291bdf5d63ab6d6ed4fe70c6c0785))
+
+
+### 🐛 Bug Fixes
+
+* releaser ([d28aa42](https://github.com/AtomiCloud/sulfoxide.boron/commit/d28aa42e923d68e819983948f024886a7a741a0c))
+
 ## [1.8.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.8.0...v1.8.1) (2023-11-18)
 
 
