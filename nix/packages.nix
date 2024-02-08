@@ -1,4 +1,4 @@
-{ pkgs, atomi, atomi_classic, pkgs-sep-24-23 }:
+{ pkgs, atomi, pkgs-sep-24-23 }:
 let
 
   all = {
@@ -7,13 +7,7 @@ let
       {
         inherit
           infisical
-          pls;
-      }
-    );
-    atomipkgs_classic = (
-      with atomi_classic;
-      {
-        inherit
+          pls
           sg;
       }
     );
@@ -27,12 +21,10 @@ let
           git
           jq
           yq-go
-
-          nodejs_20
+          skopeo
 
           # lint
           treefmt
-          skopeo
 
           # infra
           k3d
@@ -49,5 +41,4 @@ let
 in
 with all;
 atomipkgs //
-atomipkgs_classic //
 sep-24-23

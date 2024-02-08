@@ -8,8 +8,7 @@
     # registry
     nixpkgs.url = "nixpkgs/e35dcc04a3853da485a396bdd332217d0ac9054f";
     nixpkgs-sep-24-23.url = "nixpkgs/e35dcc04a3853da485a396bdd332217d0ac9054f";
-    atomipkgs.url = "github:kirinnee/test-nix-repo/v21.0.0";
-    atomipkgs_classic.url = "github:kirinnee/test-nix-repo/classic";
+    atomipkgs.url = "github:kirinnee/test-nix-repo/v23.0.1";
 
 
   };
@@ -23,7 +22,6 @@
 
       # registries
     , atomipkgs
-    , atomipkgs_classic
     , nixpkgs
     , nixpkgs-sep-24-23
 
@@ -35,7 +33,6 @@
           pkgs = nixpkgs.legacyPackages.${system};
           pkgs-sep-24-23 = nixpkgs-sep-24-23.legacyPackages.${system};
           atomi = atomipkgs.packages.${system};
-          atomi_classic = atomipkgs_classic.packages.${system};
           pre-commit-lib = pre-commit-hooks.lib.${system};
         in
         with rec {
@@ -47,7 +44,7 @@
           };
           packages = import ./nix/packages.nix
             {
-              inherit pkgs pkgs-sep-24-23 atomi atomi_classic;
+              inherit pkgs pkgs-sep-24-23 atomi;
             };
           env = import ./nix/env.nix {
             inherit pkgs packages;
