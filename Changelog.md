@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.9.0...v1.9.1) (2024-02-17)
+
+
+### 🐛 Bug Fixes
+
+* incorrect remoteSecretName ([8805bc2](https://github.com/AtomiCloud/sulfoxide.boron/commit/8805bc29b1eb01c305fe70e8d66e7447f4b81f38))
+
 ## [1.9.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.8.1...v1.9.0) (2024-02-08)
 
 
