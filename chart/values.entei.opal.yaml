@@ -11,6 +11,11 @@ auth:
     refreshInterval: 1h
     remoteSecretName: OPAL_RUBY_INGRESS_TOKEN
 
+sulfoxide-bromine:
+  serviceTree:
+    landscape: entei
+    cluster: opal
+
 replicaCount: 1
 
 autoscaling:

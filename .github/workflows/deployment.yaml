@@ -6,11 +6,13 @@ on:
 jobs:
   precommit:
     name: Pre-commit Check
-    runs-on: ubuntu-22.04
+    runs-on:
+      - nscloud-ubuntu-22.04-amd64-4x8-with-cache
+      - nscloud-cache-size-50gb
+      - nscloud-cache-tag-sulfoxide-boron-nix-store-cache
+      - nscloud-git-mirror-1gb
     steps:
-      - uses: actions/checkout@v3
-      - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: AtomiCloud/actions.setup-nix@v1.2.1
       - name: Run pre-commit
         run: nix develop .#ci -c ./scripts/ci/pre-commit.sh
 
@@ -19,12 +21,14 @@ jobs:
     needs:
       - precommit
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on:
+      - nscloud-ubuntu-22.04-amd64-4x8-with-cache
+      - nscloud-cache-size-50gb
+      - nscloud-cache-tag-sulfoxide-boron-releaser-nix-store-cache
+      - nscloud-git-mirror-1gb
     steps:
-      - uses: actions/checkout@v3
-      - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
-      - uses: rlespinasse/github-slug-action@v3.x
+      - uses: AtomiCloud/actions.setup-nix@v1.2.1
+      - uses: AtomiCloud/actions.cache-npm@v1.0.1
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,14 +7,19 @@ serviceTree:
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
+  serviceTree:
+    platform: sulfoxide
+    service: boron
   annotations:
     argocd.argoproj.io/sync-wave: "-3"
   # -- Store name to create
-  storeName: doppler-boron
+  storeName: boron
   # -- Secret of Secrets reference
   rootSecret:
     # -- DOPPLER Token Reference
-    ref: "SULFOXIDE_BORON"
+    ref:
+      clientId: SULFOXIDE_BORON_CLIENT_ID
+      clientSecret: SULFOXIDE_BORON_CLIENT_SECRET
 
 
 # -- Secret Annotations (External Secrets) to control synchronization
@@ -50,7 +55,7 @@ auth:
     # Secret Store to reference
     secretStore:
       # -- Name of the Secret Store
-      name: doppler-boron
+      name: boron
 
       # -- Kind of the Secret Store: `ClusterSecretStore` or `SecretStore`
       kind: SecretStore

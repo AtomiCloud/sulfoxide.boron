@@ -11,6 +11,11 @@ auth:
     refreshInterval: 1h
     remoteSecretName: ONYX_JADE_INGRESS_TOKEN
 
+sulfoxide-bromine:
+  serviceTree:
+    landscape: entei
+    cluster: onyx
+
 replicaCount: 1
 
 autoscaling:
