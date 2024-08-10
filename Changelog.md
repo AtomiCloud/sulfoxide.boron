@@ -1,3 +1,10 @@
+## [1.10.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.9.1...v1.10.0) (2024-08-10)
+
+
+### 🚀 New Features
+
+* switch to infisical ([d3b05b2](https://github.com/AtomiCloud/sulfoxide.boron/commit/d3b05b21772c1284eef97ac5847840c73608e6ef))
+
 ## [1.9.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.9.0...v1.9.1) (2024-02-17)
 
 
