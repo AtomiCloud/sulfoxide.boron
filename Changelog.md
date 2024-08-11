@@ -1,3 +1,10 @@
+## [1.11.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.10.0...v1.11.0) (2024-08-11)
+
+
+### 🚀 New Features
+
+* topaz and amber values ([b0e93c1](https://github.com/AtomiCloud/sulfoxide.boron/commit/b0e93c10f627f2c41cf5da3747f76b2aec4cdb78))
+
 ## [1.10.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.9.1...v1.10.0) (2024-08-10)
 
 
