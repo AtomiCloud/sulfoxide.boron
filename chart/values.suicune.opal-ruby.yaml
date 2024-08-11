@@ -1,12 +1,12 @@
 serviceTree:
-  landscape: suicune
-  cluster: opal-ruby
+  landscape: &landscape suicune
+  cluster: &cluster opal-ruby
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   serviceTree:
-    landscape: suicune
-    cluster: opal-ruby
+    landscape: *landscape
+    cluster: *cluster
   annotations:
     # -- Helm hook to run
     helm.sh/hook: pre-install,pre-upgrade
