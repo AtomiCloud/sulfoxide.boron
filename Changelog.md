@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.11.0...v1.11.1) (2024-08-11)
+
+
+### 🐛 Bug Fixes
+
+* change root proxy secret to pin via YAML anchors ([6a1bfa5](https://github.com/AtomiCloud/sulfoxide.boron/commit/6a1bfa5bde89dee803162d70999c811bbbe0e492))
+
 ## [1.11.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.10.0...v1.11.0) (2024-08-11)
 
 
