@@ -1,6 +1,6 @@
 serviceTree:
-  landscape: entei
-  cluster: topaz
+  landscape: &landscape entei
+  cluster: &cluster topaz
 
 auth:
   internal:
@@ -13,8 +13,8 @@ auth:
 
 sulfoxide-bromine:
   serviceTree:
-    landscape: entei
-    cluster: topaz
+    landscape: *landscape
+    cluster: *cluster
 
 replicaCount: 1
 
