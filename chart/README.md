@@ -46,8 +46,8 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 | secretAnnotation | object | `{"argocd.argoproj.io/sync-wave":"-2"}` | Secret Annotations (External Secrets) to control synchronization |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true,"runAsNonRoot":true,"runAsUser":10000}` | Generate security Context |
 | serviceTree | object | `{"layer":"1","module":"tunnel","platform":"sulfoxide","service":"boron"}` | AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb) |
-| sulfoxide-bromine | object | `{"annotations":{"argocd.argoproj.io/sync-wave":"-3"},"rootSecret":{"ref":{"clientId":"SULFOXIDE_BORON_CLIENT_ID","clientSecret":"SULFOXIDE_BORON_CLIENT_SECRET"}},"serviceTree":{"platform":"sulfoxide","service":"boron"},"storeName":"boron"}` | Create SecretStore via secret of secrets pattern |
-| sulfoxide-bromine.rootSecret | object | `{"ref":{"clientId":"SULFOXIDE_BORON_CLIENT_ID","clientSecret":"SULFOXIDE_BORON_CLIENT_SECRET"}}` | Secret of Secrets reference |
+| sulfoxide-bromine | object | `{"annotations":{"argocd.argoproj.io/sync-wave":"-3"},"rootSecret":{"name":"boron","ref":{"clientId":"SULFOXIDE_BORON_CLIENT_ID","clientSecret":"SULFOXIDE_BORON_CLIENT_SECRET"}},"serviceTree":{"platform":"sulfoxide","service":"boron"},"storeName":"boron"}` | Create SecretStore via secret of secrets pattern |
+| sulfoxide-bromine.rootSecret | object | `{"name":"boron","ref":{"clientId":"SULFOXIDE_BORON_CLIENT_ID","clientSecret":"SULFOXIDE_BORON_CLIENT_SECRET"}}` | Secret of Secrets reference |
 | sulfoxide-bromine.rootSecret.ref | object | `{"clientId":"SULFOXIDE_BORON_CLIENT_ID","clientSecret":"SULFOXIDE_BORON_CLIENT_SECRET"}` | DOPPLER Token Reference |
 | sulfoxide-bromine.storeName | string | `"boron"` | Store name to create |
 | tolerations | list | `[]` | toleration |

@@ -1,21 +1,22 @@
 # -- AtomiCloud Service Tree. See [ServiceTree](https://atomicloud.larksuite.com/wiki/OkfJwTXGFiMJkrk6W3RuwRrZs64?theme=DARK&contentTheme=DARK#MHw5d76uDo2tBLx86cduFQMRsBb)
 serviceTree:
-  platform: sulfoxide
-  service: boron
+  platform: &platform sulfoxide
+  service: &service boron
   module: tunnel
   layer: "1"
 
 # -- Create SecretStore via secret of secrets pattern
 sulfoxide-bromine:
   serviceTree:
-    platform: sulfoxide
-    service: boron
+    platform: *platform
+    service: *service
   annotations:
     argocd.argoproj.io/sync-wave: "-3"
   # -- Store name to create
-  storeName: boron
+  storeName: *service
   # -- Secret of Secrets reference
   rootSecret:
+    name: *service
     # -- DOPPLER Token Reference
     ref:
       clientId: SULFOXIDE_BORON_CLIENT_ID
@@ -55,7 +56,7 @@ auth:
     # Secret Store to reference
     secretStore:
       # -- Name of the Secret Store
-      name: boron
+      name: *service
 
       # -- Kind of the Secret Store: `ClusterSecretStore` or `SecretStore`
       kind: SecretStore
@@ -108,7 +109,7 @@ imagePullSecrets: [ ]
 nameOverride: ""
 
 # -- Additional Annotations to add to pods
-podAnnotations: {  }
+podAnnotations: { }
 
 # -- Security Context for Pods
 podSecurityContext: { }
@@ -117,7 +118,7 @@ podSecurityContext: { }
 securityContext:
   allowPrivilegeEscalation: false
   capabilities:
-      drop:
+    drop:
       - ALL
   privileged: false
   readOnlyRootFilesystem: true
