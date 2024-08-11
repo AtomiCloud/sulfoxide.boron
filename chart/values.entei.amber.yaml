@@ -1,6 +1,6 @@
 serviceTree:
   landscape: entei
-  cluster: ruby
+  cluster: amber
 
 auth:
   internal:
@@ -9,12 +9,12 @@ auth:
   external:
     enable: true
     refreshInterval: 1h
-    remoteSecretName: OPAL_RUBY_INGRESS_TOKEN
+    remoteSecretName: TOPAZ_AMBER_INGRESS_TOKEN
 
 sulfoxide-bromine:
   serviceTree:
     landscape: entei
-    cluster: ruby
+    cluster: amber
 
 replicaCount: 1
 
