@@ -1,3 +1,11 @@
+## [1.12.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.11.1...v1.12.0) (2024-08-17)
+
+
+### 🚀 New Features
+
+* added opal and ruby ([05e4c07](https://github.com/AtomiCloud/sulfoxide.boron/commit/05e4c07e23a40cba7986895752aa5d697e9785c3))
+* added opal and ruby for entei ([f23f67e](https://github.com/AtomiCloud/sulfoxide.boron/commit/f23f67ed971e513204d2a9d2da2b0e7b1cc40c6c))
+
 ## [1.11.1](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.11.0...v1.11.1) (2024-08-11)
 
 
