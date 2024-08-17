@@ -1,6 +1,6 @@
 serviceTree:
-  landscape: entei
-  cluster: onyx
+  landscape: &landscape entei
+  cluster: &cluster opal
 
 auth:
   internal:
@@ -9,12 +9,12 @@ auth:
   external:
     enable: true
     refreshInterval: 1h
-    remoteSecretName: ONYX_JADE_INGRESS_TOKEN
+    remoteSecretName: OPAL_RUBY_INGRESS_TOKEN
 
 sulfoxide-bromine:
   serviceTree:
-    landscape: entei
-    cluster: onyx
+    landscape: *landscape
+    cluster: *cluster
 
 replicaCount: 1
 
