@@ -1,3 +1,10 @@
+## [1.13.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.12.0...v1.13.0) (2024-08-28)
+
+
+### 🚀 New Features
+
+* values for mica & talc ([e9a2b92](https://github.com/AtomiCloud/sulfoxide.boron/commit/e9a2b92c5c6c9f3d91ca432e12f16b88425da46c))
+
 ## [1.12.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.11.1...v1.12.0) (2024-08-17)
 
 
