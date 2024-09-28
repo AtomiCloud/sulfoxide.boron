@@ -40,7 +40,7 @@ plugins:
       customTags:
         - 'v${major}'
         - 'v${major}.${minor}'
-  - module: '@semantic-release/github'
+  - module: '@semantic-release/github@v23.1.1'
 
 # Helm
 types:
