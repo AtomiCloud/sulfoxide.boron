@@ -22,25 +22,30 @@ specialScopes:
     release: false
 
 plugins:
-  - module: '@semantic-release/changelog@6.0.3'
+  - module: '@semantic-release/changelog'
+    version: 6.0.3
     config:
       changelogFile: Changelog.md
-  - module: '@semantic-release/exec@6.0.3'
+  - module: '@semantic-release/exec'
+    version: 6.0.3
     config:
       prepareCmd: ./scripts/ci/publish.sh ${nextRelease.version}
-  - module: '@semantic-release/git@10.0.1'
+  - module: '@semantic-release/git'
+    version: 10.0.1
     config:
       message: "release: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       assets:
         - chart/**/*.*
         - Changelog.md
         - docs/developer/CommitConventions.md
-  - module: 'semantic-release-major-tag@0.3.2'
+  - module: 'semantic-release-major-tag'
+    version: 0.3.2
     config:
       customTags:
         - 'v${major}'
         - 'v${major}.${minor}'
-  - module: '@semantic-release/github@v10.3.5'
+  - module: '@semantic-release/github'
+    version: 10.3.5
 
 # Helm
 types:

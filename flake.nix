@@ -8,7 +8,7 @@
     # registry
     nixpkgs.url = "nixpkgs/5e0ca22929f3342b19569b21b2f3462f053e497b";
     nixpkgs-240810.url = "nixpkgs/5e0ca22929f3342b19569b21b2f3462f053e497b";
-    atomipkgs.url = "github:kirinnee/test-nix-repo/v27.0.0";
+    atomipkgs.url = "github:kirinnee/test-nix-repo/v28.0.0";
 
 
   };

@@ -15,16 +15,16 @@
         "npkgs-unstable": "npkgs-unstable_3"
       },
       "locked": {
-        "lastModified": 1720858656,
-        "narHash": "sha256-k/EE+GrQYP0BDYhdS/YWULMNrewZm4Y7+wWncal4Udk=",
+        "lastModified": 1727535459,
+        "narHash": "sha256-4NhQ5cX5MNaQTLShhwroD+vAbNO6/8KLh7Is7IXhHfY=",
         "owner": "kirinnee",
         "repo": "test-nix-repo",
-        "rev": "164d6fd91e41410bfd0d8737ec77388346045665",
+        "rev": "6e28f6405ca3f2ecd75d494a2911e7e5f368c8b5",
         "type": "github"
       },
       "original": {
         "owner": "kirinnee",
-        "ref": "v27.0.0",
+        "ref": "v28.0.0",
         "repo": "test-nix-repo",
         "type": "github"
       }
