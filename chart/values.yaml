@@ -51,7 +51,7 @@ auth:
     refreshInterval: 1h
 
     # -- Remote Secret Reference name
-    remoteSecretName: OPAL_RUBY_INGRESS_TOKEN
+    remoteSecretName: INGRESS_TOKEN
 
     # Secret Store to reference
     secretStore:

@@ -15,14 +15,14 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | affinity |
-| auth | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"boron"}},"internal":{"enable":false,"token":""},"secretName":"cloudflare-tunnel-token"}` | Cloudflare Tunnel Token |
-| auth.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"OPAL_RUBY_INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"boron"}}` | Use external secret |
+| auth | object | `{"external":{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"boron"}},"internal":{"enable":false,"token":""},"secretName":"cloudflare-tunnel-token"}` | Cloudflare Tunnel Token |
+| auth.external | object | `{"enable":true,"policy":{"creation":"Owner","deletion":"Retain"},"refreshInterval":"1h","remoteSecretName":"INGRESS_TOKEN","secretStore":{"kind":"SecretStore","name":"boron"}}` | Use external secret |
 | auth.external.enable | bool | `true` | Enable the use of external secret |
 | auth.external.policy | object | `{"creation":"Owner","deletion":"Retain"}` | Secret policy |
 | auth.external.policy.creation | string | `"Owner"` | Creation policy |
 | auth.external.policy.deletion | string | `"Retain"` | Deletion policy |
 | auth.external.refreshInterval | string | `"1h"` | Refresh Rate |
-| auth.external.remoteSecretName | string | `"OPAL_RUBY_INGRESS_TOKEN"` | Remote Secret Reference name |
+| auth.external.remoteSecretName | string | `"INGRESS_TOKEN"` | Remote Secret Reference name |
 | auth.external.secretStore.kind | string | `"SecretStore"` | Kind of the Secret Store: `ClusterSecretStore` or `SecretStore` |
 | auth.external.secretStore.name | string | `"boron"` | Name of the Secret Store |
 | auth.internal | object | `{"enable":false,"token":""}` | Secret directly inlined in value files |
