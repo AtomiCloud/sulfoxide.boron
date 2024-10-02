@@ -2,7 +2,7 @@ apiVersion: v2
 name: sulfoxide-boron
 description: Helm chart to deploy internal ingress controller with VPN access to internal services using cloudflared
 type: application
-version: 1.14.0
+version: 1.15.0
 appVersion: "2024.8.2"
 dependencies:
   - name: sulfoxide-bromine

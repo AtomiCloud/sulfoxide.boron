@@ -1,3 +1,10 @@
+## [1.15.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.14.0...v1.15.0) (2024-10-02)
+
+
+### 📦 Upstreams Changes
+
+* **atominix:** ugrading to 28.0.0 ([f6b4868](https://github.com/AtomiCloud/sulfoxide.boron/commit/f6b4868380b2c36bdec19bef79a24ceec655cc82))
+
 ## [1.13.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.12.0...v1.13.0) (2024-08-28)
 
 
