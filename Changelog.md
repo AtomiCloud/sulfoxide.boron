@@ -1,17 +1,3 @@
-## [1.14.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.13.0...v1.14.0) (2024-09-28)
-
-
-### 🚀 New Features
-
-* align with tofu removal of cluster set ([60e55b4](https://github.com/AtomiCloud/sulfoxide.boron/commit/60e55b4609dc3bf9381ef658f0f3d05c44762d6f))
-
-
-### 🐛 Bug Fixes
-
-* attempt to pin semantic-release/github ([2a33e03](https://github.com/AtomiCloud/sulfoxide.boron/commit/2a33e03b31f2fef3663a1a21e0a14484d8fe7eca))
-* attempt to pin semantic-release/github ([1e09570](https://github.com/AtomiCloud/sulfoxide.boron/commit/1e09570564e4bf0e69f8a321cfc68b44da7f2824))
-* pin releaser ([9ed5105](https://github.com/AtomiCloud/sulfoxide.boron/commit/9ed51055a668d4499837adfecbb7a3e8c30bd211))
-
 ## [1.13.0](https://github.com/AtomiCloud/sulfoxide.boron/compare/v1.12.0...v1.13.0) (2024-08-28)
 
 
