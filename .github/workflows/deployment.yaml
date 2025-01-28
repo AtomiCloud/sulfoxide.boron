@@ -28,7 +28,7 @@ jobs:
       - nscloud-git-mirror-1gb
     steps:
       - uses: AtomiCloud/actions.setup-nix@v1.2.1
-      - uses: AtomiCloud/actions.cache-npm@v1.0.1
+      - uses: AtomiCloud/actions.cache-npm@v1.1.0
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
