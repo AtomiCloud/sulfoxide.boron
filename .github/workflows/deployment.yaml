@@ -12,7 +12,7 @@ jobs:
       - nscloud-cache-tag-sulfoxide-boron-nix-store-cache
       - nscloud-git-mirror-1gb
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v1.2.1
+      - uses: AtomiCloud/actions.setup-nix@v1.3.2
       - name: Run pre-commit
         run: nix develop .#ci -c ./scripts/ci/pre-commit.sh
 
@@ -27,7 +27,7 @@ jobs:
       - nscloud-cache-tag-sulfoxide-boron-releaser-nix-store-cache
       - nscloud-git-mirror-1gb
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v1.2.1
+      - uses: AtomiCloud/actions.setup-nix@v1.3.2
       - uses: AtomiCloud/actions.cache-npm@v1.0.1
       - name: Release
         env:
