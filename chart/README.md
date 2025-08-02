@@ -8,7 +8,7 @@ Helm chart to deploy internal ingress controller with VPN access to internal ser
 
 | Repository | Name | Version |
 |------------|------|---------|
-| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.5.1 |
+| oci://ghcr.io/atomicloud/sulfoxide.bromine | sulfoxide-bromine | 1.8.0 |
 
 ## Values
 
